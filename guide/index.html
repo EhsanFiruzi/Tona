@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Groq API Key — Quick Bilingual Guide (EN / FA)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: linear-gradient(135deg,#0f172a 0%, #0b1220 50%);
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.04);
+      --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
+      --muted: rgba(255,255,255,0.65);
+      --glass-border: rgba(255,255,255,0.08);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg1);color:#e6eef8}
+    .container{max-width:1100px;margin:40px auto;padding:28px;}
+    .header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(12,11,23,0.6);font-weight:700}
+    .title{font-size:18px;font-weight:600}
+    .subtitle{font-size:13px;color:var(--muted)}
+
+    .controls{display:flex;gap:10px;align-items:center}
+    .lang-switch{background:var(--glass);border:1px solid var(--glass-border);padding:6px;border-radius:12px;display:flex;gap:4px}
+    .lang-switch button{appearance:none;border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+    .lang-switch button.active{background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));color:#fff;box-shadow:0 4px 18px rgba(7, 89, 133, 0.18)}
+
+    .grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
+    @media (max-width:980px){.grid{grid-template-columns:1fr}}
+
+    .card{background:var(--card);padding:20px;border-radius:14px;border:1px solid var(--glass-border);backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+    h2{margin:0 0 10px 0}
+    p{color:var(--muted);margin:0 0 12px 0}
+
+    .step{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);margin-bottom:12px}
+    .step .num{min-width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700}
+    code{background:rgba(0,0,0,0.12);padding:4px 6px;border-radius:6px;color:#fff;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace}
+
+    pre{background:rgba(0,0,0,0.18);padding:12px;border-radius:10px;overflow:auto;font-size:13px}
+    .copy-btn{background:transparent;border:1px solid var(--glass-border);padding:6px 10px;border-radius:8px;cursor:pointer; color: #fff;}
+    .links{display:flex;gap:8px;flex-wrap:wrap}
+    a.btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid var(--glass-border);background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);color:inherit}
+
+    .right .section{margin-bottom:14px}
+    .hint{font-size:13px;color:var(--muted);padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+
+    /* i18n visibility */
+    .lang-en, .lang-fa{display:none}
+    .app[data-lang="en"] .lang-en{display:block}
+    .app[data-lang="fa"] .lang-fa{display:block}
+
+    /* Persian adjustments */
+    .app[data-lang="fa"]{direction:rtl}
+    .app[data-lang="fa"] .logo{transform:rotateY(180deg)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="brand">
+        <div class="logo">GQ</div>
+        <div>
+          <div class="title">Groq API Key — Quick Guide</div>
+          <div class="subtitle">EN / FA — toggle language below</div>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="lang-switch" role="tablist" aria-label="Language switch">
+          <button id="btn-en" class="active" aria-pressed="true">EN</button>
+          <button id="btn-fa">فارسی</button>
+        </div>
+        <div style="width:8px"></div>
+        <a class="btn" id="open-console" target="_blank" rel="noopener">Open Groq Console</a>
+      </div>
+    </div>
+
+    <div class="grid app" data-lang="en" id="app">
+      <main class="card">
+        <!-- English block -->
+        <section class="lang-en">
+          <h2>How to get your Groq API Key — Step by step</h2>
+          <p>Follow these short steps to create and copy an API key from Groq Cloud. The official console and docs are linked in the right column.</p>
+
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <strong>Sign up / Log in</strong>
+              <p>Open the Groq Console (Console → Create Account or Login). Use your email, GitHub, or Google to sign in.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <strong>Go to <code>/keys</code> (API Keys)</strong>
+              <p>In the Console sidebar, open "API Keys" or visit the API Keys page to manage keys.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <strong>Create a new API key</strong>
+              <p>Click <em>Create API Key</em>, enter a descriptive name (e.g., "my-app-key") and submit. The Console will generate a key for you.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <strong>Copy & store it safely</strong>
+              <p>Copy the generated key and save it in a secure place (environment variable or secrets manager). If you lose it you can revoke and create a new one from the Console.</p>
+            </div>
+          </div>
+
+          <h3>Quick usage examples</h3>
+          <p>Set an environment variable and call the API (example):</p>
+          <pre id="snippet-en">export GROQ_API_KEY=&lt;your-api-key-here&gt;
+
+curl -X POST https://api.groq.com/openai/v1/chat/completions \
+  -H "Authorization: Bearer $GROQ_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"openai/gpt-oss-20b","messages":[{"role":"user","content":"Hello"}]}'
+</pre>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="copy-btn" data-copy-target="#snippet-en">Copy snippet</button>
+            <button class="copy-btn" id="open-key-page">Open API Keys</button>
+          </div>
+
+          <h3>Security tips</h3>
+          <div class="hint">
+            <ul>
+              <li>Store keys in environment variables or a secrets manager (don't commit to Git).</li>
+              <li>Rotate and revoke keys you no longer use.</li>
+              <li>Use minimal scopes / billing limits if available.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Persian block -->
+        <section class="lang-fa">
+          <h2>روش گرفتن API Key از Groq — مرحله به مرحله</h2>
+          <p>این راهنما مراحل ساده برای ایجاد و کپی کلید API در Groq Cloud را نشان می‌دهد. مستندات رسمی در ستون سمت راست قابل دسترسی است.</p>
+
+          <div class="step">
+            <div class="num">1</div>
+            <div>
+              <strong>ثبت‌نام یا ورود</strong>
+              <p>به Groq Console بروید و با ایمیل، GitHub یا Google وارد شوید.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">2</div>
+            <div>
+              <strong>رفتن به بخش API Keys</strong>
+              <p>در منوی کنسول، صفحه "API Keys" را باز کنید یا به مسیر <code>/keys</code> بروید تا کلیدها را مدیریت کنید.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">3</div>
+            <div>
+              <strong>ساختن کلید جدید</strong>
+              <p>روی "Create API Key" کلیک کنید، یک نام توصیفی وارد کنید (مثل "my-app-key") و ارسال کنید. کنسول یک کلید تولید می‌کند.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="num">4</div>
+            <div>
+              <strong>کپی و ذخیره امن</strong>
+              <p>کلید تولید شده را کپی کنید و در محیط امنی مثل متغیر محیطی یا secrets manager ذخیره کنید. اگر کلید را گم کنید می‌توانید آن را در کنسول لغو و کلید جدید بسازید.</p>
+            </div>
+          </div>
+
+          <h3>مثال سریع استفاده</h3>
+          <p>یک متغیر محیطی تنظیم کنید و API را صدا بزنید (نمونه):</p>
+          <pre id="snippet-fa">export GROQ_API_KEY=&lt;your-api-key-here&gt;
+
+curl -X POST https://api.groq.com/openai/v1/chat/completions \
+  -H "Authorization: Bearer $GROQ_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"openai/gpt-oss-20b","messages":[{"role":"user","content":"سلام"}]}'
+</pre>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <button class="copy-btn" data-copy-target="#snippet-fa">کپی نمونه</button>
+            <button class="copy-btn" id="open-key-page-fa">باز کردن API Keys</button>
+          </div>
+
+          <h3>نکات امنیتی</h3>
+          <div class="hint">
+            <ul>
+              <li>کلیدها را در متغیرهای محیطی یا سرویس‌های مدیریت اسرار ذخیره کنید (هرگز در گیت قرار ندهید).</li>
+              <li>کلیدهای بلااستفاده را چرخانده یا لغو کنید.</li>
+              <li>در صورت وجود، محدودیت هزینه یا دسترسی را فعال کنید.</li>
+            </ul>
+          </div>
+        </section>
+
+        <footer>
+          This page is a local guide. Use the buttons on the right to open Groq Console and official docs.
+        </footer>
+      </main>
+
+      <aside class="right">
+        <div class="card">
+          <div class="section">
+            <h3>Useful links</h3>
+            <p class="subtitle">Quick access to official Groq pages (opens in new tab).</p>
+            <div class="links" style="margin-top:10px">
+              <a id="link-console" class="btn" target="_blank" rel="noopener">Groq Console (console.groq.com)</a>
+              <a id="link-keys" class="btn" target="_blank" rel="noopener">API Keys page (/keys)</a>
+              <a id="link-quickstart" class="btn" target="_blank" rel="noopener">Quickstart / Docs</a>
+            </div>
+          </div>
+
+          <div class="section">
+            <h4>Notes</h4>
+            <p class="hint">The examples use the OpenAI-compatible endpoints provided by Groq. See the API reference for available models and additional endpoints.</p>
+          </div>
+
+          <div class="section">
+            <h4>Actions</h4>
+            <div style="display:flex;gap:8px">
+              <button class="copy-btn" id="save-local">Save HTML (copy)</button>
+              <button class="copy-btn" id="reset-storage">Reset language preference</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script>
+    // --- i18n toggle ---
+    const app = document.getElementById('app');
+    const btnEn = document.getElementById('btn-en');
+    const btnFa = document.getElementById('btn-fa');
+    const openConsole = document.getElementById('open-console');
+    const linkConsole = document.getElementById('link-console');
+    const linkKeys = document.getElementById('link-keys');
+    const linkQuickstart = document.getElementById('link-quickstart');
+
+    // Official links (used by the UI only)
+    const CONSOLE_URL = 'https://console.groq.com/';
+    const KEYS_URL = 'https://console.groq.com/keys';
+    const QUICKSTART_URL = 'https://console.groq.com/docs/quickstart';
+
+    openConsole.href = CONSOLE_URL;
+    linkConsole.href = CONSOLE_URL;
+    linkKeys.href = KEYS_URL;
+    linkQuickstart.href = QUICKSTART_URL;
+
+    function setLang(lang){
+      app.dataset.lang = lang;
+      btnEn.classList.toggle('active', lang==='en');
+      btnFa.classList.toggle('active', lang==='fa');
+      btnEn.setAttribute('aria-pressed', lang==='en');
+      btnFa.setAttribute('aria-pressed', lang==='fa');
+      // set document direction for screen readers / layout
+      document.documentElement.lang = (lang==='fa') ? 'fa' : 'en';
+      document.documentElement.dir = (lang==='fa') ? 'rtl' : 'ltr';
+      try{ localStorage.setItem('groq_guide_lang', lang);}catch(e){}
+    }
+
+    btnEn.addEventListener('click', ()=>setLang('en'));
+    btnFa.addEventListener('click', ()=>setLang('fa'));
+
+    // initialize from localStorage
+    const saved = localStorage.getItem('groq_guide_lang') || 'en';
+    setLang(saved);
+
+    // copy buttons
+    document.querySelectorAll('.copy-btn[data-copy-target]').forEach(btn =>{
+      btn.addEventListener('click', async ()=>{
+        const sel = document.querySelector(btn.getAttribute('data-copy-target'));
+        if(!sel) return;
+        try{
+          await navigator.clipboard.writeText(sel.textContent);
+          btn.textContent = (app.dataset.lang==='fa') ? 'کپی شد ✓' : 'Copied ✓';
+          setTimeout(()=>{ btn.textContent = (app.dataset.lang==='fa') ? 'کپی نمونه' : 'Copy snippet'; },1500);
+        }catch(e){
+          alert((app.dataset.lang==='fa')? 'کپی ناموفق' : 'Copy failed');
+        }
+      });
+    });
+
+    // open key page buttons
+    document.getElementById('open-key-page').addEventListener('click', ()=> window.open(KEYS_URL, '_blank'));
+    document.getElementById('open-key-page-fa').addEventListener('click', ()=> window.open(KEYS_URL, '_blank'));
+
+    // save local (copy full HTML source)
+    document.getElementById('save-local').addEventListener('click', async ()=>{
+      const html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      try{
+        await navigator.clipboard.writeText(html);
+        alert((app.dataset.lang==='fa')? 'کد HTML کپی شد؛ آن را در یک فایل .html پیست کنید.' : 'HTML copied — paste into a .html file and open it in your browser.');
+      }catch(e){
+        alert((app.dataset.lang==='fa')? 'کپی نشد' : 'Copy failed');
+      }
+    });
+
+    document.getElementById('reset-storage').addEventListener('click', ()=>{
+      localStorage.removeItem('groq_guide_lang');
+      setLang('en');
+      alert((app.dataset.lang==='fa')? 'ترجیح زبان ریست شد' : 'Language preference reset');
+    });
+  </script>
+</body>
+</html>
