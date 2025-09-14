@@ -2,62 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Groq API Key — Quick Bilingual Guide (EN / FA)</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+Arabic:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg1: linear-gradient(135deg,#0f172a 0%, #0b1220 50%);
-      --card: rgba(255,255,255,0.06);
-      --glass: rgba(255,255,255,0.04);
-      --accent: linear-gradient(90deg,#7c3aed,#06b6d4);
-      --muted: rgba(255,255,255,0.65);
-      --glass-border: rgba(255,255,255,0.08);
+    :root {
+      --bg1: linear-gradient(135deg, #0f172a 0%, #0b1220 50%);
+      --card: rgba(255, 255, 255, 0.06);
+      --glass: rgba(255, 255, 255, 0.04);
+      --accent: linear-gradient(90deg, #7c3aed, #06b6d4);
+      --muted: rgba(255, 255, 255, 0.65);
+      --glass-border: rgba(255, 255, 255, 0.08);
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Arabic', 'Helvetica Neue', Arial;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background:var(--bg1);color:#e6eef8}
-    .container{max-width:1100px;margin:40px auto;padding:28px;}
-    .header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
-    .brand{display:flex;gap:14px;align-items:center}
-    .logo{width:56px;height:56px;border-radius:12px;background:var(--accent);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 30px rgba(12,11,23,0.6);font-weight:700}
-    .title{font-size:18px;font-weight:600}
-    .subtitle{font-size:13px;color:var(--muted)}
 
-    .controls{display:flex;gap:10px;align-items:center}
-    .lang-switch{background:var(--glass);border:1px solid var(--glass-border);padding:6px;border-radius:12px;display:flex;gap:4px}
-    .lang-switch button{appearance:none;border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:600}
-    .lang-switch button.active{background:linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));color:#fff;box-shadow:0 4px 18px rgba(7, 89, 133, 0.18)}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; background: var(--bg1); color: #e6eef8; }
+    .container { max-width: 1100px; margin: 40px auto; padding: 28px; }
+    .header { display: flex; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+    .brand { display: flex; gap: 14px; align-items: center; }
+    .logo { width: 56px; height: 56px; border-radius: 12px; background: var(--accent); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 30px rgba(12, 11, 23, 0.6); font-weight: 700; }
+    .title { font-size: 18px; font-weight: 600; }
+    .subtitle { font-size: 13px; color: var(--muted); }
 
-    .grid{display:grid;grid-template-columns:1fr 420px;gap:20px}
-    @media (max-width:980px){.grid{grid-template-columns:1fr}}
+    .controls { display: flex; gap: 10px; align-items: center; }
+    .lang-switch { background: var(--glass); border: 1px solid var(--glass-border); padding: 6px; border-radius: 12px; display: flex; gap: 4px; }
+    .lang-switch button { appearance: none; border: 0; background: transparent; color: var(--muted); padding: 8px 12px; border-radius: 10px; cursor: pointer; font-weight: 600; }
+    .lang-switch button.active { background: linear-gradient(90deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)); color: #fff; box-shadow: 0 4px 18px rgba(7, 89, 133, 0.18); }
 
-    .card{background:var(--card);padding:20px;border-radius:14px;border:1px solid var(--glass-border);backdrop-filter: blur(6px);box-shadow:0 8px 30px rgba(2,6,23,0.6)}
-    h2{margin:0 0 10px 0}
-    p{color:var(--muted);margin:0 0 12px 0}
+    .grid { display: grid; grid-template-columns: 1fr 420px; gap: 20px; }
+    .card { background: var(--card); padding: 20px; border-radius: 14px; border: 1px solid var(--glass-border); backdrop-filter: blur(6px); box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6); }
+    h2 { margin: 0 0 10px 0; }
+    p { color: var(--muted); margin: 0 0 12px 0; }
 
-    .step{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);margin-bottom:12px}
-    .step .num{min-width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;font-weight:700}
-    code{background:rgba(0,0,0,0.12);padding:4px 6px;border-radius:6px;color:#fff;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace}
+    .step { display: flex; gap: 12px; align-items: flex-start; padding: 12px; border-radius: 10px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent); margin-bottom: 12px; }
+    .step .num { min-width: 36px; height: 36px; border-radius: 9px; background: rgba(255, 255, 255, 0.04); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    code { background: rgba(0, 0, 0, 0.12); padding: 4px 6px; border-radius: 6px; color: #fff; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace; }
 
-    pre{background:rgba(0,0,0,0.18);padding:12px;border-radius:10px;overflow:auto;font-size:13px}
-    .copy-btn{background:transparent;border:1px solid var(--glass-border);padding:6px 10px;border-radius:8px;cursor:pointer; color: #fff;}
-    .links{display:flex;gap:8px;flex-wrap:wrap}
-    a.btn{display:inline-block;padding:8px 12px;border-radius:10px;text-decoration:none;border:1px solid var(--glass-border);background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);color:inherit}
+    pre { background: rgba(0, 0, 0, 0.18); padding: 12px; border-radius: 10px; overflow: auto; font-size: 13px; word-wrap: break-word; white-space: pre-wrap; }
+    .copy-btn { background: transparent; border: 1px solid var(--glass-border); padding: 6px 10px; border-radius: 8px; cursor: pointer; color: #fff; min-width: 80px; text-align: center; }
+    .links { display: flex; gap: 8px; flex-wrap: wrap; }
+    a.btn { display: inline-block; padding: 8px 12px; border-radius: 10px; text-decoration: none; border: 1px solid var(--glass-border); background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), transparent); color: inherit; }
 
-    .right .section{margin-bottom:14px}
-    .hint{font-size:13px;color:var(--muted);padding:10px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+    .right .section { margin-bottom: 14px; }
+    .hint { font-size: 13px; color: var(--muted); padding: 10px; border-radius: 8px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent); }
 
     /* i18n visibility */
-    .lang-en, .lang-fa{display:none}
-    .app[data-lang="en"] .lang-en{display:block}
-    .app[data-lang="fa"] .lang-fa{display:block}
+    .lang-en, .lang-fa { display: none; }
+    .app[data-lang="en"] .lang-en { display: block; }
+    .app[data-lang="fa"] .lang-fa { display: block; }
 
     /* Persian adjustments */
-    .app[data-lang="fa"]{direction:rtl}
-    .app[data-lang="fa"] .logo{transform:rotateY(180deg)}
+    .app[data-lang="fa"] { direction: rtl; }
+    .app[data-lang="fa"] .logo { transform: rotateY(180deg); }
 
-    footer{margin-top:18px;color:var(--muted);font-size:13px;text-align:center}
+    footer { margin-top: 18px; color: var(--muted); font-size: 13px; text-align: center; }
+
+    /* Mobile optimizations */
+    @media (max-width: 768px) {
+      .container { max-width: 100%; margin: 20px auto; padding: 16px; }
+      .grid { grid-template-columns: 1fr; gap: 16px; }
+      .header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .controls { width: 100%; justify-content: space-between; gap: 8px; }
+      .brand { width: 100%; justify-content: space-between; }
+      .step { flex-direction: column; align-items: center; text-align: center; }
+      .step .num { margin-bottom: 8px; }
+      .card { padding: 16px; }
+      .title { font-size: 16px; }
+      .subtitle { font-size: 12px; }
+      .links { flex-direction: column; }
+      pre { font-size: 12px; padding: 8px; }
+      .copy-btn { padding: 8px 12px; }
+      footer { font-size: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 12px; margin: 10px auto; }
+      .logo { width: 48px; height: 48px; }
+      .num { min-width: 32px; height: 32px; font-size: 14px; }
+      h2 { font-size: 18px; }
+      p { font-size: 14px; }
+      .lang-switch button { padding: 6px 10px; font-size: 12px; }
+      a.btn { padding: 6px 10px; font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -176,7 +203,7 @@ curl -X POST https://api.groq.com/openai/v1/chat/completions \
             <div class="num">4</div>
             <div>
               <strong>کپی و ذخیره امن</strong>
-              <p>کلید تولید شده را کپی کنید و در محیط امنی مثل متغیر محیطی یا secrets manager ذخیره کنید. اگر کلید را گم کنید می‌توانید آن را در کنسول لغو و کلید جدید بسازید.</p>
+              <p>کلید تولید شده را کپی کنید و در محیط امنی AMS مثل متغیر محیطی یا secrets manager ذخیره کنید. اگر کلید را گم کنید می‌توانید آن را در کنسول لغو و کلید جدید بسازید.</p>
             </div>
           </div>
 
@@ -258,59 +285,54 @@ curl -X POST https://api.groq.com/openai/v1/chat/completions \
     linkKeys.href = KEYS_URL;
     linkQuickstart.href = QUICKSTART_URL;
 
-    function setLang(lang){
+    function setLang(lang) {
       app.dataset.lang = lang;
-      btnEn.classList.toggle('active', lang==='en');
-      btnFa.classList.toggle('active', lang==='fa');
-      btnEn.setAttribute('aria-pressed', lang==='en');
-      btnFa.setAttribute('aria-pressed', lang==='fa');
-      // set document direction for screen readers / layout
-      document.documentElement.lang = (lang==='fa') ? 'fa' : 'en';
-      document.documentElement.dir = (lang==='fa') ? 'rtl' : 'ltr';
-      try{ localStorage.setItem('groq_guide_lang', lang);}catch(e){}
+      btnEn.classList.toggle('active', lang === 'en');
+      btnFa.classList.toggle('active', lang === 'fa');
+      btnEn.setAttribute('aria-pressed', lang === 'en');
+      btnFa.setAttribute('aria-pressed', lang === 'fa');
+      document.documentElement.lang = (lang === 'fa') ? 'fa' : 'en';
+      document.documentElement.dir = (lang === 'fa') ? 'rtl' : 'ltr';
+      try { localStorage.setItem('groq_guide_lang', lang); } catch (e) {}
     }
 
-    btnEn.addEventListener('click', ()=>setLang('en'));
-    btnFa.addEventListener('click', ()=>setLang('fa'));
+    btnEn.addEventListener('click', () => setLang('en'));
+    btnFa.addEventListener('click', () => setLang('fa'));
 
-    // initialize from localStorage
     const saved = localStorage.getItem('groq_guide_lang') || 'en';
     setLang(saved);
 
-    // copy buttons
-    document.querySelectorAll('.copy-btn[data-copy-target]').forEach(btn =>{
-      btn.addEventListener('click', async ()=>{
+    document.querySelectorAll('.copy-btn[data-copy-target]').forEach(btn => {
+      btn.addEventListener('click', async () => {
         const sel = document.querySelector(btn.getAttribute('data-copy-target'));
-        if(!sel) return;
-        try{
+        if (!sel) return;
+        try {
           await navigator.clipboard.writeText(sel.textContent);
-          btn.textContent = (app.dataset.lang==='fa') ? 'کپی شد ✓' : 'Copied ✓';
-          setTimeout(()=>{ btn.textContent = (app.dataset.lang==='fa') ? 'کپی نمونه' : 'Copy snippet'; },1500);
-        }catch(e){
-          alert((app.dataset.lang==='fa')? 'کپی ناموفق' : 'Copy failed');
+          btn.textContent = (app.dataset.lang === 'fa') ? 'کپی شد ✓' : 'Copied ✓';
+          setTimeout(() => { btn.textContent = (app.dataset.lang === 'fa') ? 'کپی نمونه' : 'Copy snippet'; }, 1500);
+        } catch (e) {
+          alert((app.dataset.lang === 'fa') ? 'کپی ناموفق' : 'Copy failed');
         }
       });
     });
 
-    // open key page buttons
-    document.getElementById('open-key-page').addEventListener('click', ()=> window.open(KEYS_URL, '_blank'));
-    document.getElementById('open-key-page-fa').addEventListener('click', ()=> window.open(KEYS_URL, '_blank'));
+    document.getElementById('open-key-page').addEventListener('click', () => window.open(KEYS_URL, '_blank'));
+    document.getElementById('open-key-page-fa').addEventListener('click', () => window.open(KEYS_URL, '_blank'));
 
-    // save local (copy full HTML source)
-    document.getElementById('save-local').addEventListener('click', async ()=>{
+    document.getElementById('save-local').addEventListener('click', async () => {
       const html = '<!doctype html>\n' + document.documentElement.outerHTML;
-      try{
+      try {
         await navigator.clipboard.writeText(html);
-        alert((app.dataset.lang==='fa')? 'کد HTML کپی شد؛ آن را در یک فایل .html پیست کنید.' : 'HTML copied — paste into a .html file and open it in your browser.');
-      }catch(e){
-        alert((app.dataset.lang==='fa')? 'کپی نشد' : 'Copy failed');
+        alert((app.dataset.lang === 'fa') ? 'کد HTML کپی شد؛ آن را در یک فایل .html پیست کنید.' : 'HTML copied — paste into a .html file and open it in your browser.');
+      } catch (e) {
+        alert((app.dataset.lang === 'fa') ? 'کپی نشد' : 'Copy failed');
       }
     });
 
-    document.getElementById('reset-storage').addEventListener('click', ()=>{
+    document.getElementById('reset-storage').addEventListener('click', () => {
       localStorage.removeItem('groq_guide_lang');
       setLang('en');
-      alert((app.dataset.lang==='fa')? 'ترجیح زبان ریست شد' : 'Language preference reset');
+      alert((app.dataset.lang === 'fa') ? 'ترجیح زبان ریست شد' : 'Language preference reset');
     });
   </script>
 </body>
